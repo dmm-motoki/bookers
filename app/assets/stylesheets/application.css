@@ -73,6 +73,14 @@ li {
   padding-left: 33px;
 }
 
+.create-notice {
+  padding: 33px 0 0 66px;
+}
+
+.edit-notice {
+  color: green;
+}
+
 .show-title {
   padding: 30px 0 15px 33px;
 }
@@ -83,4 +91,12 @@ li {
 
 .show-categoly {
   float: left;
+}
+
+.edit {
+  margin: 33px;
+}
+
+.edit-item {
+  margin-bottom: 10px;
 }
