@@ -7,5 +7,5 @@
   <%= f.text_area :body %>
   <%= f.submit '保存' %>
 
-  <p><%= link_to 'Show', show_book_path(@book.id) %> | <%= link_to 'Back', '/books' %></p>
+  <p><%= link_to 'Show', book_path(@book.id) %> | <%= link_to 'Back', '/books' %></p>
 <% end %>

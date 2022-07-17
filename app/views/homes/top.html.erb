@@ -1,7 +1,23 @@
-<h1>ようこそBookersへ！</h1>
-<p>
-  Bookersでは、さまざまな書籍に関するあなたの意見や<br>
-  印象を共有し交換することができます
-</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>bookers</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-<%= link_to "start", "/books" %>
+    <%= stylesheet_link_tag 'homes', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <h1 class="top-heading">ようこそBookersへ！</h1>
+    <div class="top-text">
+      <p>
+        Bookersでは、さまざまな書籍に関するあなたの意見や<br>
+        印象を共有し交換することができます
+      </p>
+
+      <%= link_to "start", "/books" %>
+    </div>
+  </body>
+</html>

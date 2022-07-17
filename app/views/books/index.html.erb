@@ -1,29 +1,50 @@
-<h1>Books</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>bookers</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-<div>
-  <h4>Title</h4>
-  <% @books.each do |book| %>
-    <ul>
-      <li><%= book.title %></li>
-    </ul>
-  <% end %>
-</div>
-<div>
-  <h4>Body</h4>
-  <% @books.each do |book| %>
-    <ul>
-      <li>
-        <span><%= book.body %></span>
-        <span>Show</span><span>Edit</span><span>Destroy</span>
-      </li>
-    </ul>
-  <% end %>
-</div>
-<h2>New book</h2>
-<%= form_with model: Book.new do |f| %>
-  <p>title</p>
-  <%= f.text_field :title %>
-  <p>body</p>
-  <p><%= f.text_area :body %></p>
-  <p><%= f.submit 'Create Book' %></p>
-<% end %>
+    <%= stylesheet_link_tag 'books', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h1 class="index-heading">Books</h1>
+    <div class="index">
+      <div class="title">
+        <h4 class="categoly">Title</h4>
+        <% @books.each do |book| %>
+          <ul>
+            <li><%= book.title %></li>
+          </ul>
+        <% end %>
+      </div>
+      <div class="body">
+        <h4 class="categoly">Body</h4>
+        <% @books.each do |book| %>
+          <ul class="body-list">
+            <li>
+              <p>
+                <%= book.body %>
+              <!-- <span><%#= link_to 'Show', "books/#{book.id}" %></span><span>Edit</span><span>Destroy</span> -->
+                <span class=controller><span class="btn"><%= link_to 'Show', book_path(book.id) %></span><span class="btn">Edit</span><span class="btn">Destroy</span></span>
+              </p>
+            </li>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+    <div class="new">
+      <h2>New book</h2>
+      <%= form_with model: Book.new do |f| %>
+        <p class="new-categoly">title</p>
+        <%= f.text_field :title %>
+        <p class="new-categoly">body</p>
+        <p><%= f.text_area :body %></p>
+        <p><%= f.submit 'Create Book' %></p>
+      <% end %>
+    </div>
+  </body>
+</html>
