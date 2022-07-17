@@ -1,7 +1,26 @@
-<h2>Title:</h2>
-<p><%= @book.title %></p>
+<html>
+  <head>
+    <title>bookers</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-<h2>Body:</h2>
-<p><%= @book.body %></p>
+    <%= stylesheet_link_tag 'books', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-<p><%= link_to 'Edit', edit_book_path(@book.id) %> | <%= link_to 'Back', '/books' %></p>
+  <body>
+    <div class="show">
+      <div class="show-title">
+        <h4 class="show-categoly">Title:</h4>
+        <p><%= @book.title %></p>
+      </div>
+
+      <div class="show-body">
+        <h4 class="show-categoly">Body:</h4>
+        <p><%= @book.body %></p>
+      </div>
+      <p class="show-btn"><%= link_to 'Edit', edit_book_path(@book.id) %> | <%= link_to 'Back', '/books' %></p>
+    </div>
+  </body>
+</html>
